@@ -17,6 +17,9 @@ Do the following:
 
    HINT: no function required
 */
+let votingAge = 18
+
+console.log(votingAge)
 
 
 
@@ -30,7 +33,12 @@ Do the following:
 
    HINT: no function required
 */
+let value1 = 'condition' 
+let value2 = 'permanent'
 
+value1 = "conditional"
+
+console.log(value1)
 
 
 
@@ -45,7 +53,10 @@ Do the following:
 
    HINT: look up the Number method
 */
+let year = '1999'
+let integer = parseInt (year,10)
 
+console.log()
 
 
 
@@ -58,11 +69,10 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
+function multiply(num1, num2){
+    return num1 * num2
   }
-
-
+console.log(multiply(5,4))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -74,11 +84,10 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(age){
+  var dogYears = 7 *  age;
+  return (dogYears);
 }
-
-
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -107,11 +116,29 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(weight, age){
+    //big dogs
+    if (age >= 1 && weight <= 5){
+        return weight *0.05;
+      } else if (age >= 1 && weight <= 10 && weight >5){
+        return weight * 0.04;
+      } else if (age >= 1 && weight <= 15 && weight>= 11){
+        return weight * 0.03;
+      } else if(age >= 1 && weight > 15){
+        return weight * 0.02;
+      }
+      // puppies
+      else if (age <=4/12){
+        return weight * 0.1
+      }else if (age <= 7/12){
+        return weight * 0.05
+      }else{
+        return weight * 0.04
+      }
+
   }
 
-
+  console.log(hungryDog(15,1))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -136,6 +163,25 @@ Use the game function below to do the following:
 
 function game(user, computer){
     /*add your code here*/
+  
+  if (user == "scissors") {
+    if (computer == "scissors") return "it's a tie"
+    if (computer == "paper") return "you win!"
+    if (computer == "rock") return "you lose!"
+  }
+  
+  if (user == "paper") {
+    if (computer == "paper") return "it's a tie"
+    if (computer == "rock") return "you win!"
+    if (computer == "scissors") return "you lose!"
+  }
+
+  if (user == "rock") {
+    if (computer == "rock") return "it's a tie"
+    if (computer == "scissors") return "you win!"
+    if (computer == "paper") return "you lose!"
+  }
+
 }
   
   
@@ -151,8 +197,9 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
+
+function miles(kilometers){
+    return kilometers * 0.621371
   }
 
 
@@ -165,9 +212,9 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
-  }
+function feet(cm){
+  return cm / 30.48
+}
  
 
 
@@ -181,10 +228,13 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
+function annoyingSong(number){
+    for(let i = number; i >= 0; i--){
+      
+     return (`${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i - 1} bottles of soda on the wall`)
+    }
   }
-
+  
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -201,9 +251,13 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
-  }
+function grade(percentage){
+  if (percentage >=90) return 'you got an A'
+  if (percentage >79 && percentage <90) return 'you got a B'
+  if (percentage >69 && percentage <80) return 'you got a C'
+  if (percentage >59 && percentage <70) return 'you got a D'
+  if (percentage <60) return 'you got an F'
+}
   
   
 
